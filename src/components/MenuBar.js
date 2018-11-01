@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MenuBar = (props) => {
+const MenuBar = ({ changeClicked }) => {
 
   /*
 
@@ -13,21 +13,25 @@ const MenuBar = (props) => {
 
   */
 
+  const clickHandler = (event) => {
+    changeClicked(event.target.id);
+  }
+
   return (
     <div className="ui four item menu">
-      <a className="item active" id="profile">
+      <a className="item active" id="profile" onClick={clickHandler}>
         <i className="user large icon" id="profile"/>
       </a>
 
-      <a className="item" id="photo">
+      <a className="item" id="photo" onClick={clickHandler}>
         <i className="photo large icon" id="photo"/>
       </a>
 
-      <a className="item" id="cocktail">
+      <a className="item" id="cocktail" onClick={clickHandler}>
         <i className="cocktail large icon" id="cocktail"/>
       </a>
 
-      <a className="item" id="pokemon"> 
+      <a className="item" id="pokemon" onClick={clickHandler}> 
         <i className=" themeisle large icon" id="pokemon"/>
       </a>
     </div>
