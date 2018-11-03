@@ -15,19 +15,19 @@ const MenuBar = (props) => {
 
   return (
     <div className="ui four item menu">
-      <a className="item active" id="profile">
+      <a className={props.selected === "profile" ? "item active" : "item"} id="profile" onClick={() => props.updateSelected("profile")} >
         <i className="user large icon" id="profile"/>
       </a>
 
-      <a className="item" id="photo">
+      <a className={props.selected === "photo" ? "item active" : "item"} id="photo" onClick={() => props.updateSelected("photo")} >
         <i className="photo large icon" id="photo"/>
       </a>
 
-      <a className="item" id="cocktail">
+      <a className={props.selected === "cocktail" ? "item active" : "item"} id="cocktail" onClick={() => props.updateSelected("cocktail")} >
         <i className="cocktail large icon" id="cocktail"/>
       </a>
 
-      <a className="item" id="pokemon"> 
+      <a className={props.selected === "pokemon" ? "item active" : "item"} id="pokemon"onClick={() => props.updateSelected("pokemon")} > 
         <i className=" themeisle large icon" id="pokemon"/>
       </a>
     </div>
